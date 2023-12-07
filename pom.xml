@@ -25,7 +25,26 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>sonar-maven-plugin</artifactId>
+      <version>3.4.0.905</version>
+      <type>pom</type>
+    </dependency>
   </dependencies>
+   <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <sonar.host.url> http://localhost:9000 </sonar.host.url>
+                <sonar.projectKey>sonar</sonar.projectKey>
+                <sonar.login>sqp_62f50248031c24cbb482e8392b5e7a1a2d77dd9f</sonar.login>
+            </properties>
+        </profile>
+     </profiles>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
